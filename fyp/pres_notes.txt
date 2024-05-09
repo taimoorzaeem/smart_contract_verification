@@ -1,0 +1,3 @@
+At what time the smart contract gets executed?
+
+  When it is mined by the miner.

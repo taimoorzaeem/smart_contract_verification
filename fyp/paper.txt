@@ -1,0 +1,25 @@
+-- Abstract
+
+  A smart contract is a program that lives on the blockchain, intended
+  to automatically execute on specific transactional events. With its
+  widespread use in bitcoin technology, it is vulnerable to several
+  attacks and security breaches which has led to loss of millions of
+  dollars. Many techniques have been used to discover vulnerabilities
+  and ensure system safety such as model checking, simulations, automatic
+  provers and other state-based models. However, these techniques have
+  given low security assurance and failed to produce reasonable results.
+  In this project, we will use higher-order-logic(HOL) theorem prover to
+  model the system as HOL predicates and prove functional properties to
+  ensure functional correctness with strong security assurance.
+
+-- Introduction
+
+-- Related Work
+
+-- Formal Specification / Model
+
+-- Functional / Formal Verification
+
+-- Future Work / Discussion (Maybe??)
+
+-- Conclusion
