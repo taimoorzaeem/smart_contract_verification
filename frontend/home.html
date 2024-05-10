@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>FYP</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading-font">Formally Verifying Smart Contracts using Theorem Proving</h1>
+        <button class="tab-button" onclick="toHome()">Home</button>
+        <button class="tab-button" onclick="toFormalModel()">Formal Model</button>
+        <button class="tab-button" onclick="toVerification()">Verification</button>
+        <button class="tab-button" onclick="toPaper()">Paper</button>
+        <h2>Abstract</h2>
+        <p>
+            Blockchain technology is recently being used in all sorts of applications. With the advent
+            of Web3, blockchain technology is being used now in web applications. A major reason for
+            this is smart contracts that enable us to implement decentralized applications in trust-less
+            environments. Along with its adoption, attacks exploiting smart contract vulnerabilities are
+            inevitably growing. To counter these attacks and avoid security breaches, several approaches
+            have been explored such as documenting vulnerabilities, simulations or model checking using
+            formal verification. However, these approaches are inadequate to capture the blockchain and
+            users’ behavior properties. We propose to use higher-order-logic theorem proving as an
+            alternative strategy to formally model and verify smart contract behavior in its execution
+            environment. We will verify smart contract properties by proving theorems on the formal
+            model.
+        </p>
+        <img src="images/how-blockchain-works.png" alt="how-blockchain-works">
+        <p>
+            A smart contract is a piece of code that lives on the blockchain client. It is triggered and
+            executed by specific transactions. The result of a smart contract execution changes global
+            state, and the transaction is then stored in the blockchain. In this way, smart contracts
+            can be used to implement decentralized applications. However, smart contracts – since they
+            are a piece of code – are vulnerable to many security threats and attacks. As smart
+            contracts operate in a distributed execution environment, taking adequate security measures
+            is a challenge to this day.
+        </p>
+        <img src="images/sc-walkthrough.png" alt="smart-contract-walkthrough">
+        <p>
+            Many approaches have been taken to analyze and test security measures for smart contracts.
+            To guarantee correctness, many experts resort to using Formal Methods. Formal methods are
+            a way to model a system mathematically and then use verification to prove properties related
+            to the system. Traditional methods such as simulations aren’t adequate to guarantee safety
+            because these methods may skip some critical test cases and model checking has scalability
+            issues. Theorem Proving is a technique where we model the system using mathematical axioms
+            and propositions that guarantee completeness thus is powerful technique in analyzing a
+            system.
+        </p>
+    </div>
+</body>
+</html>

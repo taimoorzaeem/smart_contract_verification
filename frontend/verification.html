@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="script.js"></script>
+    <script src="prism.js"></script>
+    <title>FYP</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading-font">Formally Verifying Smart Contracts using Theorem Proving</h1>
+        <button class="tab-button" onclick="toHome()">Home</button>
+        <button class="tab-button" onclick="toFormalModel()">Formal Model</button>
+        <button class="tab-button" onclick="toVerification()">Verification</button>
+        <button class="tab-button" onclick="toPaper()">Paper</button>
+
+        <h2>Verified Properties</h2>
+        <p>
+            For all times, if transactions are empty in the system for 
+            some time unit, then it will remain empty in the next time unit.
+        </p>
+        <div class="model-definition">
+            <pre>
+                <code class="language-sml">
+                    (∀pending_tx mine. TRANSACTIONS pending_tx mine ==>
+                        (∀t. pending_tx t = [] ==> pending_tx (t+1) = []))
+                </code>
+            </pre>
+        </div>
+        <p>
+            For all times, if no data is sent from the mining
+            process, then no data is sent to the blocks process.
+        </p>
+        <div class="model-definition">
+            <pre>
+                <code class="language-sml">
+                    (∀sc_tx block_tx reg success.
+                        REGISTER_CONTRACT sc_tx block_tx reg success ==>
+                            (∀t. sc_tx t = NO_DATA ==> block_tx t = NO_DATA))
+                </code>
+            </pre>
+        </div>
+        <p>
+            For all times, if no data was received from the contract,
+            then no data will be added to the blockchain.
+        </p>
+        <div class="model-definition">
+            <pre>
+                <code class="language-sml">
+                    (∀block_tx blocks. BLOCKS block_tx blocks ==>
+                        (∀t. block_tx t = NO_DATA ==> blocks (t+1) = blocks t))
+                </code>
+            </pre>
+        </div>
+        <p>
+            For all times and for all data, if some data was received from 
+            the contract, then that data will be appended to the blockchain.
+        </p>
+        <div class="model-definition">
+            <pre>
+                <code class="language-sml">
+                    (∀block_tx blocks. BLOCKS block_tx blocks ==>
+                        (∀t x. block_tx t = DATA x ==> blocks (t+1) = x::(blocks t)))
+                </code>
+            </pre>
+        </div>
+        <h2>WIP...</h2>
+    </div>
+</body>
+</html>

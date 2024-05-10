@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" 
+          href="prism.css">
+    <script src="script.js"></script>
+    <script src="prism.js"></script>
+    <title>FYP</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading-font">Formally Verifying Smart Contracts using Theorem Proving</h1>
+        <button class="tab-button" onclick="toHome()">Home</button>
+        <button class="tab-button" onclick="toFormalModel()">Formal Model</button>
+        <button class="tab-button" onclick="toVerification()">Verification</button>
+        <button class="tab-button" onclick="toPaper()">Paper</button>
+
+        <h2>Architecture</h2>
+        <img src="images/system-architecture.png" alt="system-architecture">
+        <br/><br/>
+        <div class="dropdown">
+            <label for="code-block-selector">Select Model:</label>
+            <select id="code-block-selector" onchange="updateCodeBlock()">
+                <option value="transactions">TRANSACTIONS</option>
+                <option value="mining">MINING</option>
+                <option value="contract">REG CONTRACT</option>
+                <option value="blocks">BLOCKS</option>
+                <option value="channel">CHANNEL</option>
+                <option value="blockchain">BLOCKCHAIN</option>
+                <option value="hacked">HACKED</option>
+            </select>
+        </div>
+        <div class="model-definition">
+            <h2 id="title-box">Transactions</h2>
+            <pre>
+                <code id="code-box" class="language-sml">
+                    Definition TRANSACTIONS_def:
+                        TRANSACTIONS pending_tx mine =
+                            ∀t. (case pending_tx t of
+                                   []      => (mine t = NO_DATA) /\ (pending_tx (t+1) = [])
+                                 | (x::xs) => (mine t = DATA x) /\ (pending_tx (t+1) = xs))
+                    End
+                </code>
+            </pre>
+        </div>
+    </div>
+</body>
+</html>
